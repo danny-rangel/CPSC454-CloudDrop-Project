@@ -16,13 +16,9 @@ class App extends Component {
     state = { auth: null };
 
     componentDidMount() {
-        axios
-            .get(
-                'http://clouddrop.us-west-1.elasticbeanstalk.com/api/current_user'
-            )
-            .then(user => {
-                this.setState({ auth: user.data });
-            });
+        axios.get('/api/current_user').then(user => {
+            this.setState({ auth: user.data });
+        });
     }
 
     render() {
